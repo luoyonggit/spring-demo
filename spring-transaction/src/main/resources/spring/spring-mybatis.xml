@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+        p:dataSource-ref="dataSource"
+        p:typeAliasesPackage="com.study.transaction.model"
+        p:mapperLocations="classpath:mybatis/sqlMap/*.xml"
+        p:configLocation="classpath:mybatis/mybatis-config.xml" />
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+          p:sqlSessionFactoryBeanName="sqlSessionFactory"
+          p:basePackage="com.study.transaction.dao"/>
+
+</beans>
