@@ -19,7 +19,7 @@
 	</properties>
   
   <modules>
-    <module>../spring-core</module>
-    <module>../spring-transaction</module>
+    <module>spring-core</module>
+    <module>spring-transaction</module>
   </modules>
 </project>
